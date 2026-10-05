@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BVG Karriere — Night Shift (Konzept)</title>
+  <meta name="description" content="Inoffizielles Konzept einer Karriereseite der BVG im Cyberpunk-Stil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>html { background: #06060a; }</style>
+  <link rel="stylesheet" href="/src/style.css" />
+  <script>document.documentElement.classList.add("is-loading");</script>
+</head>
+<body>
+  <div class="loader" data-loader role="status" aria-label="Seite wird geladen">
+    <div class="loader__door loader__door--left" aria-hidden="true"><span class="loader__window"></span></div>
+    <div class="loader__door loader__door--right" aria-hidden="true"><span class="loader__window"></span></div>
+    <ol class="loader__lights" data-loader-lights aria-hidden="true"><li style="--c: #7dad4c"></li><li style="--c: #da421e"></li><li style="--c: #16683d"></li><li style="--c: #f0d722"></li><li style="--c: #7e5330"></li><li style="--c: #8c6dab"></li><li style="--c: #528dba"></li><li style="--c: #224f86"></li><li style="--c: #f3791d"></li></ol>
+  </div>
+  <a class="skip" href="#abfahrt">Zu den Stellen springen</a>
+
+  <canvas class="scene" aria-hidden="true"></canvas>
+  <div class="scene-fallback" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="nav__brand" href="#top" aria-label="BVG Karriere, Startseite">
+      <span class="nav__logo">BVG</span>
+      <span class="nav__sub">Karriere</span>
+    </a>
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      <a href="#bereiche">Bereiche</a>
+      <a href="#abfahrt">Stellen</a>
+      <a href="#ausbildung">Ausbildung</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#team">Team</a>
+    </nav>
+    <a class="btn btn--small" href="#abfahrt">Jobs finden</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hud hud--tl" aria-hidden="true">
+        <span class="hud__label">LINIE</span>
+        <span class="hud__value">K1 → Karriere</span>
+      </div>
+      <div class="hud hud--tr" aria-hidden="true">
+        <span class="hud__label">BERLIN</span>
+        <span class="hud__value" data-clock>--:--:--</span>
+      </div>
+      <div class="hud hud--br" aria-hidden="true">
+        <span class="hud__label">TEMPO</span>
+        <span class="hud__value"><span data-speed>42</span> km/h</span>
+        <span class="hud__bar"><span data-speed-bar></span></span>
+      </div>
+
+      <div class="hero__copy">
+        <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>Nachtschicht · 16.000 Kolleg:innen · 24/7</p>
+        <h1 class="hero__title" id="hero-title" data-glitch>
+          <span class="hero__line">Berlin braucht dich.</span>
+          <span class="hero__line hero__line--accent">Auch nachts.</span>
+        </h1>
+        <p class="hero__lead">
+          U-Bahn, Tram, Bus, Fähre. Wir halten die Stadt in Bewegung — rund um die Uhr.
+          Steig ein: im Fahrdienst, in der Technik, in der IT oder mit einer Ausbildung.
+        </p>
+        <div class="hero__actions">
+          <a class="btn" href="#abfahrt">Offene Stellen ansehen <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#abfahrt" data-filter-link="Ausbildung">Ausbildung entdecken</a>
+        </div>
+      </div>
+
+      <p class="hero__scroll" aria-hidden="true">Scrollen beschleunigt den Zug</p>
+    </section>
+
+    <section class="section" id="bereiche" aria-labelledby="fields-title">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow">Umsteigen möglich</p>
+        <h2 class="section__title" id="fields-title">Vier Linien. <span>Ein Ziel: Berlin.</span></h2>
+        <p class="section__lead">Ob am Steuer, in der Werkstatt oder im Code — jede Rolle hält die Stadt am Laufen.</p>
+      </header>
+      <ul class="fields">
+        <li class="field" style="--accent: var(--yellow)" data-reveal data-tilt>
+          <span class="field__index">01</span>
+          <h3 class="field__title">Fahrdienst</h3>
+          <p class="field__text">U-Bahn, Tram, Bus. Du bringst jeden Tag Millionen Menschen ans Ziel — auch als Quereinsteiger:in, mit bezahlter Qualifizierung.</p>
+          <span class="field__tag">Quereinstieg möglich</span>
+          <a class="field__link" href="#abfahrt" data-filter-link="Fahrdienst">Stellen im Fahrdienst <span aria-hidden="true">→</span></a>
+        </li>
+        <li class="field" style="--accent: var(--magenta)" data-reveal data-tilt>
+          <span class="field__index">02</span>
+          <h3 class="field__title">Technik</h3>
+          <p class="field__text">Fahrzeuge, Gleise, Signale, Aufzüge. Du hältst das System unter Strom — in Werkstätten und draußen im Netz.</p>
+          <span class="field__tag">Schichtzulagen</span>
+          <a class="field__link" href="#abfahrt" data-filter-link="Technik">Stellen in der Technik <span aria-hidden="true">→</span></a>
+        </li>
+        <li class="field" style="--accent: var(--cyan)" data-reveal data-tilt>
+          <span class="field__index">03</span>
+          <h3 class="field__title">IT &amp; Digital</h3>
+          <p class="field__text">Echtzeitdaten, Apps, Cloud. Du baust die digitale Seite der Mobilität, die jeden Morgen Hunderttausende öffnen.</p>
+          <span class="field__tag">Hybrid arbeiten</span>
+          <a class="field__link" href="#abfahrt" data-filter-link="IT">Stellen in der IT <span aria-hidden="true">→</span></a>
+        </li>
+        <li class="field" style="--accent: #7dad4c" data-reveal data-tilt>
+          <span class="field__index">04</span>
+          <h3 class="field__title">Ausbildung</h3>
+          <p class="field__text">Technische und kaufmännische Berufe, dazu duale Studiengänge. Du lernst bezahlt — mit echter Chance auf Übernahme.</p>
+          <span class="field__tag">Start: 1. September</span>
+          <a class="field__link" href="#abfahrt" data-filter-link="Ausbildung">Ausbildungsplätze <span aria-hidden="true">→</span></a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="board-wrap" id="abfahrt" aria-labelledby="board-title">
+      <div class="board">
+        <header class="board__head">
+          <div>
+            <p class="board__eyebrow">Gleis 1 · Alexanderplatz</p>
+            <h2 class="board__title" id="board-title">Abfahrt <span>// offene Stellen</span></h2>
+          </div>
+          <div class="board__filters" role="group" aria-label="Nach Bereich filtern">
+            <button class="chip" aria-pressed="true" data-filter="Alle">Alle</button>
+            <button class="chip" aria-pressed="false" data-filter="Fahrdienst">Fahrdienst</button>
+            <button class="chip" aria-pressed="false" data-filter="Technik">Technik</button>
+            <button class="chip" aria-pressed="false" data-filter="IT">IT</button>
+            <button class="chip" aria-pressed="false" data-filter="Ausbildung">Ausbildung</button>
+          </div>
+        </header>
+
+        <div class="board__cols" aria-hidden="true">
+          <span>Linie</span><span>Ziel</span><span>Bereich</span><span>Gleis</span><span>Ab</span><span></span>
+        </div>
+        <ul class="board__rows" data-rows></ul>
+        <p class="board__foot" aria-live="polite">
+          <span data-count>0</span> Abfahrten angezeigt · Bewerbung ohne Anschreiben möglich
+        </p>
+      </div>
+    </section>
+    <section class="section" id="ausbildung" aria-labelledby="route-title">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow">Linie A · Ausbildung</p>
+        <h2 class="section__title" id="route-title">Deine Strecke <span>bis zum Abschluss.</span></h2>
+      </header>
+      <div class="route" data-route>
+        <div class="route__track" aria-hidden="true"><span class="route__fill"></span><span class="route__train"></span></div>
+        <ol class="route__stops">
+        <li class="stop"><span class="stop__dot" aria-hidden="true"></span><span class="stop__when">Jederzeit</span><h3 class="stop__name">Bewerben</h3><p class="stop__text">Online in 10 Minuten. Ohne Anschreiben.</p></li>
+        <li class="stop"><span class="stop__dot" aria-hidden="true"></span><span class="stop__when">2–4 Wochen</span><h3 class="stop__name">Kennenlernen</h3><p class="stop__text">Kurzer Online-Test, dann ein Gespräch auf Augenhöhe.</p></li>
+        <li class="stop"><span class="stop__dot" aria-hidden="true"></span><span class="stop__when">1. September</span><h3 class="stop__name">Einsteigen</h3><p class="stop__text">Einführungswoche mit deinem Jahrgang.</p></li>
+        <li class="stop"><span class="stop__dot" aria-hidden="true"></span><span class="stop__when">Im Wechsel</span><h3 class="stop__name">Lernen</h3><p class="stop__text">Berufsschule und Praxis im Betrieb, begleitet von Ausbilder:innen.</p></li>
+        <li class="stop"><span class="stop__dot" aria-hidden="true"></span><span class="stop__when">Nach 2,5–3,5 Jahren</span><h3 class="stop__name">Abschluss</h3><p class="stop__text">Prüfung vor der IHK oder HWK.</p></li>
+        <li class="stop stop--final"><span class="stop__dot" aria-hidden="true"></span><span class="stop__when">Endstation</span><h3 class="stop__name">Übernahme</h3><p class="stop__text">Gute Leistung? Dann bleibst du an Bord.</p></li>
+        </ol>
+      </div>
+      <a class="btn btn--ghost route__cta" href="#abfahrt" data-filter-link="Ausbildung" data-reveal>Ausbildungsplätze ansehen <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="section" id="benefits" aria-labelledby="benefits-title">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow">Fahrschein inklusive</p>
+        <h2 class="section__title" id="benefits-title">Was du <span>bekommst.</span></h2>
+      </header>
+      <ul class="tickets">
+        <li class="ticket ticket--primary" data-reveal data-holo>
+          <span class="ticket__meta"><span>Nr. 0001</span><span>Gültig: immer</span></span>
+          <h3 class="ticket__title">Freie Fahrt</h3>
+          <p class="ticket__text">Mit Bus und Bahn kostenlos durch Berlin — auch privat.</p>
+        </li>
+        <li class="ticket" data-reveal data-holo>
+          <span class="ticket__meta"><span>Nr. 0002</span><span>Unbefristet</span></span>
+          <h3 class="ticket__title">Sicherer Job</h3>
+          <p class="ticket__text">Öffentliches Unternehmen. Berlin fährt immer — du auch.</p>
+        </li>
+        <li class="ticket" data-reveal data-holo>
+          <span class="ticket__meta"><span>Nr. 0003</span><span>Nach Tarif</span></span>
+          <h3 class="ticket__title">Faire Bezahlung</h3>
+          <p class="ticket__text">Tarifvertrag plus Zulagen für Nacht-, Sonn- und Feiertage.</p>
+        </li>
+        <li class="ticket" data-reveal data-holo>
+          <span class="ticket__meta"><span>Nr. 0004</span><span>Alle Zonen</span></span>
+          <h3 class="ticket__title">Weiterkommen</h3>
+          <p class="ticket__text">Weiterbildung, Führungsprogramme, Wechsel zwischen Bereichen.</p>
+        </li>
+        <li class="ticket" data-reveal data-holo>
+          <span class="ticket__meta"><span>Nr. 0005</span><span>Langstrecke</span></span>
+          <h3 class="ticket__title">Vorsorge</h3>
+          <p class="ticket__text">Betriebliche Altersvorsorge, die mit dir mitwächst.</p>
+        </li>
+        <li class="ticket" data-reveal data-holo>
+          <span class="ticket__meta"><span>Nr. 0006</span><span>Täglich</span></span>
+          <h3 class="ticket__title">Gesundheit</h3>
+          <p class="ticket__text">Betriebssport, Gesundheitskurse und vertrauliche Beratung.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section crowd" id="team" aria-labelledby="crowd-title">
+      <header class="section__head crowd__head" data-reveal>
+        <div>
+          <p class="eyebrow">Scan läuft</p>
+          <h2 class="section__title" id="crowd-title">Wir sind <span data-crowd-total>16.000</span>. <span class="crowd__dim">Fehlt nur noch du.</span></h2>
+        </div>
+        <p class="section__lead">Hinter jeder Silhouette steckt ein Mensch, der Berlin bewegt. <span class="crowd__hint-fine">Fahr mit der Maus über die Menge.</span><span class="crowd__hint-touch">Tippe auf eine Silhouette.</span></p>
+      </header>
+      <div class="crowd__stage" data-crowd role="img" aria-label="Illustrierte Menschenmenge in den Farben der BVG. Beim Überfahren werden einzelne Personen hervorgehoben.">
+        <canvas aria-hidden="true"></canvas>
+        <div class="crowd__tag" data-crowd-tag aria-hidden="true">
+          <span class="crowd__tag-label">ID-Scan</span>
+          <strong data-tag-name>—</strong>
+          <span data-tag-role></span>
+          <span class="crowd__tag-meta" data-tag-meta></span>
+        </div>
+        <p class="crowd__count" aria-hidden="true">Erkannt <span data-crowd-count>00</span> / 16.000</p>
+      </div>
+    </section>
+
+    <section class="finale" aria-labelledby="finale-title" data-warp>
+      <p class="eyebrow eyebrow--center">Türen schließen selbsttätig</p>
+      <h2 class="finale__title" id="finale-title">Zurückbleiben? <span>Bitte nicht.</span></h2>
+      <p class="finale__lead">Bewirb dich in 10 Minuten. Ohne Anschreiben, ohne Umwege.</p>
+      <a class="btn btn--large" href="#abfahrt">Jetzt einsteigen <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Inoffizielles Designkonzept. Nicht mit der BVG verbunden. Alle Stellen sind fiktiv.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
