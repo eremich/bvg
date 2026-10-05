@@ -19,6 +19,8 @@ const KICK_BOOST = 45;
 const WARP_BLOOM = 0.9;
 const CAMERA_HEIGHT = 1.5;
 const BLOOM_STRENGTH = 1.15;
+const DESKTOP_DPR = 1.75;
+const MOBILE_DPR = 1.25;
 
 // tunnel cross-section: flat floor, straight walls, arched ceiling
 function tunnelProfile() {
@@ -193,7 +195,9 @@ const wrapZ = (z) => {
 export function createScene(canvas, { reducedMotion }) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: "high-performance" });
   renderer.setClearColor(BG);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+  // phones: cap resolution so the tunnel stays smooth on weaker GPUs
+  const isSmall = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isSmall ? MOBILE_DPR : DESKTOP_DPR));
 
   const scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2(BG, 0.024);
